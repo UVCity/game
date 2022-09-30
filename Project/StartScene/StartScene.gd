@@ -9,7 +9,7 @@ func _on_Button_pressed():
 
 func _startGame():
 	if startGame == true:
-		get_tree().change_scene("res://EndScene/EndScene.tscn")
+		get_tree().change_scene("res://MainScene/MainScene.tscn")
 		print(" Starting Game ...")
 
 func _process(_delta:float)-> void:
