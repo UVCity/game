@@ -24,8 +24,6 @@ animations = [ {
 } ]
 
 [node name="Rock" type="RigidBody2D" groups=["Rock"]]
-collision_layer = 15
-collision_mask = 15
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 11 )
@@ -36,7 +34,7 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." groups=["Rock"]]
 frames = SubResource( 1 )
-frame = 7
+frame = 1
 playing = true
 
 [connection signal="body_entered" from="." to="." method="_on_Rock_body_entered"]

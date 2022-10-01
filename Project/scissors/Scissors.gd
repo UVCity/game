@@ -9,6 +9,8 @@ func _End_Scissors():
 func Scissors_vs_(object):
 	if object.is_in_group("Rock"):
 		_End_Scissors()
+	if object.is_in_group("Player"):
+		object.endgame("Scissors")
 
 func _on_Scissors_body_entered(body)->void:
 	if body != get_Object:

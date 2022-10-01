@@ -25,8 +25,6 @@ animations = [ {
 } ]
 
 [node name="Scissors" type="RigidBody2D" groups=["Scissors"]]
-collision_layer = 15
-collision_mask = 15
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 11 )
@@ -38,7 +36,7 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." groups=["Scissors"]]
 frames = SubResource( 1 )
-frame = 6
+frame = 8
 playing = true
 
 [connection signal="body_entered" from="." to="." method="_on_Scissors_body_entered"]

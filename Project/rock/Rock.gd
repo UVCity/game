@@ -9,6 +9,8 @@ func _End_Rock():
 func Rock_vs_(object):
 	if object.is_in_group("Paper"):
 		_End_Rock()
+	if object.is_in_group("Player"):
+		object.endgame("Rock")
 
 func _on_Rock_body_entered(body)->void:
 	if body != get_Object:
