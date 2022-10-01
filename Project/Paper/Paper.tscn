@@ -25,13 +25,14 @@ animations = [ {
 "speed": 12.0
 } ]
 
-[node name="Paper" type="StaticBody2D"]
+[node name="Paper" type="StaticBody2D" groups=["Paper"]]
+collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Paper"]]
 position = Vector2( 0.75, 0.25 )
 shape = SubResource( 3 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." groups=["Paper"]]
 frames = SubResource( 2 )
-frame = 1
+frame = 9
 playing = true
