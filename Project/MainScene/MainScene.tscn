@@ -1,16 +1,30 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://MainScene/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://MainScene/GameRules.gd" type="Script" id=2]
 [ext_resource path="res://PlayersHand/PlayersHand.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SpawnNodes/SpawnNodes.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Wall/Wall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://BackGroundPlayer/BackGroundPlayer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Audio/Music.tscn" type="PackedScene" id=7]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="GameRules" type="Node" parent="."]
 script = ExtResource( 2 )
+
+[node name="RichTextLabel" type="Label" parent="GameRules"]
+margin_left = 99.0
+margin_top = 512.0
+margin_right = 139.0
+margin_bottom = 552.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+
+[node name="BackgroundPlayer" parent="GameRules" instance=ExtResource( 6 )]
+frame = 9
 
 [node name="Timer10" type="Timer" parent="GameRules"]
 wait_time = 10.0
@@ -115,6 +129,8 @@ rotation = 1.5708
 scale = Vector2( -10, 33 )
 
 [node name="PlayersHand" parent="GameRules" instance=ExtResource( 3 )]
+
+[node name="Node" parent="GameRules" instance=ExtResource( 7 )]
 
 [connection signal="timeout" from="GameRules/Timer10" to="GameRules" method="_on_Timer10_timeout"]
 [connection signal="timeout" from="GameRules/Timer2" to="GameRules" method="_on_Timer2_timeout"]

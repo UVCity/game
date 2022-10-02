@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/wowsong.ogg-5710c3536162326afc8a70641e5953b5.oggstr"
+
+[deps]
+
+source_file="res://Audio/wowsong.ogg"
+dest_files=[ "res://.import/wowsong.ogg-5710c3536162326afc8a70641e5953b5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

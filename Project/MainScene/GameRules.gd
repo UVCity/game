@@ -5,6 +5,8 @@ export var loose = "none"
 
 export var points = 0
 
+onready var _score = $RichTextLabel
+onready var _Background = $BackgroundPlayer
 onready var _player = $PlayersHand
 onready var _endTime = $Timer10
 onready var _winTime = $Timer2
@@ -28,11 +30,13 @@ func _on_Timer10_timeout():
 		_winTime.start()
 		win = _rockpaperscissors(rand())
 		_player.win = win
+		_Background.win = win
 
 func _on_Timer2_timeout():
 	if badNullpointerFunction() == true:
 		win = ""
 		_player.win = win
+		_Background.win = win
 		_winTime.stop()
 
 func win_or_loose():
@@ -59,11 +63,15 @@ func you_win():
 		win = ""
 		
 func play():
+	score()
 	if badNullpointerFunction() == true:
 		you_win()
 
+func score():
+	_score.set_text("YOUR SCORE IS " + str(points))
+	
 		
 func _process(_delts):
 	play()
-	print(win , points)
+	#print(win , points)
 	
