@@ -7,7 +7,13 @@ onready var _scissors = preload("res://Scissors/Scissors.tscn")
 
 func rand():
 	return (randi()%3)
-	
+
+func randVector():
+	var value_between_1_and_6 = (rand()+rand())
+	var multiply_value = (value_between_1_and_6*value_between_1_and_6)
+	var rand_vector = (Vector2( (multiply_value*multiply_value), (multiply_value*multiply_value) ) )
+	return rand_vector
+
 func _rockpaperscissors(randResult):
 	if randResult == 0:
 		return _rock
@@ -18,19 +24,13 @@ func _rockpaperscissors(randResult):
 
 func gift():
 	var _object = _rockpaperscissors(rand()).instance()
-	_object.position = Vector2(0,0)
+	_object.position = randVector()
 	return _object
-	
-func function2():
-	for i in get_child_count():
-		var c = get_child(i)
-		c.add_child(gift())
 
 func spawn():
-	if _time.time_left < 0.1:
-		function2()
-
+	if _time.time_left < 0.021:
+		add_child(gift())
+		
 func _process(_delta:float)->void:
+	randomize()
 	spawn()
-
-
