@@ -1,13 +1,120 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://MainScene/MainScene.gd" type="Script" id=1]
+[ext_resource path="res://MainScene/GameRules.gd" type="Script" id=2]
+[ext_resource path="res://PlayersHand/PlayersHand.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SpawnNodes/SpawnNodes.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Wall/Wall.tscn" type="PackedScene" id=5]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
+[node name="GameRules" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="Timer10" type="Timer" parent="GameRules"]
+wait_time = 10.0
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[node name="Timer2" type="Timer" parent="GameRules"]
+wait_time = 2.0
+one_shot = true
+
+[node name="SpawnPoints" type="Node" parent="GameRules"]
+
+[node name="SpawnNode" parent="GameRules/SpawnPoints" instance=ExtResource( 4 )]
+position = Vector2( -171, -546 )
+
+[node name="SpawnNode2" parent="GameRules/SpawnPoints" instance=ExtResource( 4 )]
+position = Vector2( -160, -958 )
+
+[node name="SpawnNode3" parent="GameRules/SpawnPoints" instance=ExtResource( 4 )]
+position = Vector2( 516, -986 )
+
+[node name="SpawnNode4" parent="GameRules/SpawnPoints" instance=ExtResource( 4 )]
+position = Vector2( 109, -1052 )
+
+[node name="SpawnNode5" parent="GameRules/SpawnPoints" instance=ExtResource( 4 )]
+position = Vector2( 208, -667 )
+
+[node name="SpawnNode6" parent="GameRules/SpawnPoints" instance=ExtResource( 4 )]
+position = Vector2( 194, -358 )
+
+[node name="SpawnNode7" parent="GameRules/SpawnPoints" instance=ExtResource( 4 )]
+position = Vector2( 525, -528 )
+
+[node name="SpawnNode8" parent="GameRules/SpawnPoints" instance=ExtResource( 4 )]
+position = Vector2( 685, -259 )
+
+[node name="SpawnNode9" parent="GameRules/SpawnPoints" instance=ExtResource( 4 )]
+position = Vector2( 770, -658 )
+
+[node name="SpawnNode10" parent="GameRules/SpawnPoints" instance=ExtResource( 4 )]
+position = Vector2( 993, -987 )
+
+[node name="SpawnNode13" parent="GameRules/SpawnPoints" instance=ExtResource( 4 )]
+position = Vector2( 446, -1501 )
+
+[node name="SpawnNode14" parent="GameRules/SpawnPoints" instance=ExtResource( 4 )]
+position = Vector2( -130, -1934 )
+
+[node name="SpawnNode15" parent="GameRules/SpawnPoints" instance=ExtResource( 4 )]
+position = Vector2( 441, -2491 )
+
+[node name="SpawnNode16" parent="GameRules/SpawnPoints" instance=ExtResource( 4 )]
+position = Vector2( 665, -3285 )
+
+[node name="SpawnNode17" parent="GameRules/SpawnPoints" instance=ExtResource( 4 )]
+position = Vector2( 857, -2106 )
+
+[node name="SpawnNode18" parent="GameRules/SpawnPoints" instance=ExtResource( 4 )]
+position = Vector2( 85, -3147 )
+
+[node name="SpawnNode19" parent="GameRules/SpawnPoints" instance=ExtResource( 4 )]
+position = Vector2( -296, -3518 )
+
+[node name="SpawnNode11" parent="GameRules/SpawnPoints" instance=ExtResource( 4 )]
+position = Vector2( 1064, -508 )
+
+[node name="SpawnNode12" parent="GameRules/SpawnPoints" instance=ExtResource( 4 )]
+position = Vector2( 728, -1685 )
+
+[node name="Bounds" type="Node" parent="GameRules"]
+
+[node name="wall" parent="GameRules/Bounds" instance=ExtResource( 5 )]
+position = Vector2( -224, 306 )
+scale = Vector2( 10, 33 )
+
+[node name="wall2" parent="GameRules/Bounds" instance=ExtResource( 5 )]
+position = Vector2( 1241, 322 )
+scale = Vector2( -10, 33 )
+
+[node name="wall3" parent="GameRules/Bounds" instance=ExtResource( 5 )]
+position = Vector2( 121, 898 )
+rotation = -1.0248
+scale = Vector2( 10, 33 )
+
+[node name="wall7" parent="GameRules/Bounds" instance=ExtResource( 5 )]
+position = Vector2( -491, -248 )
+rotation = -1.0248
+scale = Vector2( 10, 33 )
+
+[node name="wall4" parent="GameRules/Bounds" instance=ExtResource( 5 )]
+position = Vector2( 911, 813 )
+rotation = 1.16693
+scale = Vector2( -10, 33 )
+
+[node name="wall6" parent="GameRules/Bounds" instance=ExtResource( 5 )]
+position = Vector2( 1517, -186 )
+rotation = 1.16693
+scale = Vector2( -10, 33 )
+
+[node name="wall5" parent="GameRules/Bounds" instance=ExtResource( 5 )]
+position = Vector2( 490, 838 )
+rotation = 1.5708
+scale = Vector2( -10, 33 )
+
+[node name="PlayersHand" parent="GameRules" instance=ExtResource( 3 )]
+
+[connection signal="timeout" from="GameRules/Timer10" to="GameRules" method="_on_Timer10_timeout"]
+[connection signal="timeout" from="GameRules/Timer2" to="GameRules" method="_on_Timer2_timeout"]

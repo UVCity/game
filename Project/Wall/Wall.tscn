@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Paper/paper_11.png" type="Texture" id=1]
+[ext_resource path="res://Wall/Wall.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="wall" type="StaticBody2D" groups=["Paper", "Rock", "Scissors"]]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Paper", "Rock", "Scissors"]]
+scale = Vector2( 1.1, 1.25 )
+shape = SubResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." groups=["Paper", "Rock", "Scissors"]]
+modulate = Color( 0.129412, 0.129412, 0.129412, 1 )
+frames = SubResource( 2 )

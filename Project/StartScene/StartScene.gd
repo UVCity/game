@@ -2,6 +2,7 @@ extends Node2D
 
 onready var _startGameObject = $Button
 var startGame :bool= false
+var _ignore
 
 func _on_Button_pressed():
 	if _startGameObject.pressed == true:
@@ -9,7 +10,7 @@ func _on_Button_pressed():
 
 func _startGame():
 	if startGame == true:
-		get_tree().change_scene("res://MainScene/MainScene.tscn")
+		_ignore = get_tree().change_scene("res://MainScene/MainScene.tscn")
 		print(" Starting Game ...")
 
 func _process(_delta:float)-> void:

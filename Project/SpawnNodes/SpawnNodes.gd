@@ -9,17 +9,18 @@ func rand():
 	return (randi()%3)
 
 func randVector():
-	var value_between_1_and_6 = (rand()+rand())
-	var multiply_value = (value_between_1_and_6*value_between_1_and_6)
+	var value_A_between_1_and_6 = (rand()+rand())
+	var value_B_between_1_and_6 = (rand()+rand())
+	var multiply_value = (value_A_between_1_and_6*value_B_between_1_and_6)
 	var rand_vector = (Vector2( (multiply_value*multiply_value), (multiply_value*multiply_value) ) )
 	return rand_vector
 
 func _rockpaperscissors(randResult):
 	if randResult == 0:
 		return _rock
-	if randResult == 1:
+	elif randResult == 1:
 		return _paper
-	if randResult == 2:
+	elif randResult == 2:
 		return _scissors
 
 func gift():
