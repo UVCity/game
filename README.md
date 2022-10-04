@@ -11,13 +11,14 @@ A quick reflex will reward you more points!
 ### Known Bugs :bug: 
 
 - When touching the correct falling object at the correct time, you could still loose the game if the 2 second window is over while still in contact 
-with a once safe object. (could be perceived as a instant Game Over when you touched the correct object)
+with a once safe object. (could be perceived as a instant Game Over right when you touch the correct object)
 
 ### Self-Assessment
 
-I'll be honest, originally I had not planned on doing the Ludum Dare for various reasons. But I was messing around with Godot a little too much for Project 2 and caused a fun looking looping error when just opening that project in the Godot Editor. So I decided to accept the Ludun Dare Challenge. With a Start, middle and end, I would say this game is not only my first Solo 72 game, but officially this is my very first game.
+I'll be honest, originally I had not planned on doing the Ludum Dare for various reasons. But I was messing around with Godot a little too much for Project 2 and caused a fun looking looping error when just opening that project in the Godot Editor. So I decided to accept the Ludun Dare Challenge.
 
-This challenge was for the most part, enjoyable. I went in, with a straight-forward mindset work-flow, being very cautious and aware of the time limit. Sometimes when I would find myself stuck on a bug ; I was capable of going somewhere else and then coming back to the bug or even no second thought completely scratching the code behind the bug and try a different approach.
+With a Start, middle and end, I would say this game is not only my first Solo 72 game, but officially this is my very first game.
+This challenge was for the most part, enjoyable. I went in, with a straight-forward and mindset work-flow, being very cautious and aware of my time limit. Sometimes when I would find myself stuck on a bug ; I was capable of going somewhere else and then coming back to the bug or even, having no second thought, completely scratching the code behind the bug and solving the issue with a different approach. I focused on writing the code as clean as I knew how to & I just realized that I have 0 bugs in the final iteration. AWSOME !
 
 Last thing I'll say is, ironically I got my best ideas for how to design the game towards the end of the project. As I was putting the last part's and pieces of the project together, ideas where jumping left to right "I could do this !", "I could make this look like that !", I had to ignore every single idea. That was fun - I hope this horrible game gives you a nice challenge for a few seconds. 
 
